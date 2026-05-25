@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pelanggan__restorans', function (Blueprint $table) {
+        Schema::create('pelanggan_restorans', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string("nama_pelanggan");
+            $table->string("nomor_hp");
+            $table->text("catatan_khusus")->nullable();
+            $table->timestamps(); //ini akan membuat tanggal daftar otomatis!
         });
     }
 
