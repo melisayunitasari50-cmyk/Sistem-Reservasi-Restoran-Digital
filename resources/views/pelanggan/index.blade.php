@@ -11,7 +11,7 @@
 <div class="container mt-5">
 
     @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert" id="success-alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -61,6 +61,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    setTimeout(function() {
+        var alertElement = document.getElementById('success-alert');
+        if (alertElement) {
+            var alert = new bootstrap.Alert(alertElement);
+            alert.close();
+        }
+    }, 3000);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
