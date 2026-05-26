@@ -66,43 +66,43 @@
             </div>
 
             <div class="col-md-4 col-sm-6">
-                <div class="card h-100 border-0 shadow-sm opacity-75">
+                <div class="card h-100 border-0 shadow-sm transition-card">
                     <div class="card-body text-center p-4">
                         <div class="bg-warning bg-opacity-10 text-warning rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-people fs-2"></i>
                         </div>
                         <span class="badge bg-warning bg-opacity-20 text-dark mb-2 px-3 py-2 fw-semibold">PKG-12-3</span>
-                        <h5 class="card-title fw-bold text-secondary">Modul Pelanggan</h5>
+                        <h5 class="card-title fw-bold">Modul Pelanggan</h5>
                         <p class="card-text text-muted small">Pencatatan database keanggotaan pelanggan, histori kunjungan, serta kontak reservasi aktif.</p>
-                        <button class="btn btn-secondary btn-sm w-100 mt-2 disabled">Belum Dibuat <i class="bi bi-lock-fill ms-1"></i></button>
+                        <a href="{{ url('/pelanggan') }}" class="btn btn-outline-warning btn-sm w-100 mt-2 fw-bold text-dark">Buka Modul <i class="bi bi-arrow-right ms-1"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 col-sm-6">
-                <div class="card h-100 border-0 shadow-sm opacity-75">
+                <div class="card h-100 border-0 shadow-sm transition-card">
                     <div class="card-body text-center p-4">
                         <div class="bg-danger bg-opacity-10 text-danger rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-cart-check fs-2"></i>
                         </div>
                         <span class="badge bg-danger bg-opacity-10 text-danger mb-2 px-3 py-2 fw-semibold">PKG-12-4</span>
-                        <h5 class="card-title fw-bold text-secondary">Modul Pesanan</h5>
+                        <h5 class="card-title fw-bold">Modul Pesanan</h5>
                         <p class="card-text text-muted small">Transaksi reservasi pemesanan meja terintegrasi pesanan menu hidangan pilihan.</p>
-                        <button class="btn btn-secondary btn-sm w-100 mt-2 disabled">Belum Dibuat <i class="bi bi-lock-fill ms-1"></i></button>
+                        <a href="{{ url('/order') }}" class="btn btn-outline-danger btn-sm w-100 mt-2 fw-bold text-dark">Buka Modul <i class="bi bi-arrow-right ms-1"></i></a>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 col-sm-6">
-                <div class="card h-100 border-0 shadow-sm opacity-75">
+                <div class="card h-100 border-0 shadow-sm transition-card">
                     <div class="card-body text-center p-4">
                         <div class="bg-info bg-opacity-10 text-info rounded-circle p-3 mx-auto mb-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
                             <i class="bi bi-person-badge fs-2"></i>
                         </div>
                         <span class="badge bg-info bg-opacity-10 text-info mb-2 px-3 py-2 fw-semibold">PKG-12-5</span>
-                        <h5 class="card-title fw-bold text-secondary">Modul Karyawan</h5>
+                        <h5 class="card-title fw-bold">Modul Karyawan</h5>
                         <p class="card-text text-muted small">Pengelolaan otorisasi akun staf (kasir, pelayan, admin), serta penugasan pelayanan meja.</p>
-                        <button class="btn btn-secondary btn-sm w-100 mt-2 disabled">Belum Dibuat <i class="bi bi-lock-fill ms-1"></i></button>
+                        <a href="{{ url('/karyawan') }}" class="btn btn-outline-info btn-sm w-100 mt-2 fw-bold text-dark">Buka Modul <i class="bi bi-arrow-right ms-1"></i></a>
                     </div>
                 </div>
             </div>
