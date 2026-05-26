@@ -3,15 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\MenuController;
-<<<<<<< HEAD
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PelangganRestoranController; // Pastikan ini ada
+use App\Http\Controllers\KaryawanController;         // Pastikan ini ada
 
-// 1. Halaman Utama Website
-=======
-use App\Http\Controllers\PelangganRestoranController;
-
-// Halaman utama sekarang mengarah ke Dashboard Restoran
->>>>>>> 8cc7fbf0915b5fc3028a93d0e1f2396c41d82ef4
+// 1. Halaman Utama
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -34,8 +30,17 @@ Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::get('/order/tambah', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order/simpan', [OrderController::class, 'store'])->name('order.store');
 // Route untuk Modul-Modul (Meja dan Menu)
+// 2. Modul Meja
 Route::resource('meja', MejaController::class);
+
+// 3. Modul Menu
 Route::resource('menu', MenuController::class);
 
-// Jalur untuk pelanggan
+// 4. Modul Pelanggan
 Route::resource('pelanggan', PelangganRestoranController::class);
+
+// 5. Modul Pesanan
+Route::resource('order', OrderController::class);
+
+// 6. Modul Karyawan
+Route::resource('karyawan', KaryawanController::class);
