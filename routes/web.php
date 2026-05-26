@@ -5,8 +5,10 @@ use App\Http\Controllers\PelangganRestoranController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\KaryawanController;         
 
 // 1. Halaman Utama Website (Mengarah ke Dashboard Restoran punya kawanmu)
+// 1. Halaman Utama
 Route::get('/', function () {
     return view('dashboard');
 });
@@ -28,3 +30,17 @@ Route::post('/menu/simpan', [MenuController::class, 'store'])->name('menu.store'
 Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::get('/order/tambah', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order/simpan', [OrderController::class, 'store'])->name('order.store');
+// 2. Modul Meja
+Route::resource('meja', MejaController::class);
+
+// 3. Modul Menu
+Route::resource('menu', MenuController::class);
+
+// 4. Modul Pelanggan
+Route::resource('pelanggan', PelangganRestoranController::class);
+
+// 5. Modul Pesanan
+Route::resource('order', OrderController::class);
+
+// 6. Modul Karyawan
+Route::resource('karyawan', KaryawanController::class);
