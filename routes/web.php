@@ -9,7 +9,6 @@ use App\Http\Controllers\KaryawanController;         // Pastikan ini ada
 
 // 1. Halaman Utama
 // 1. Halaman Utama Website
-use App\Http\Controllers\PelangganRestoranController;
 
 // Halaman utama sekarang mengarah ke Dashboard Restoran
 Route::get('/', function () {
