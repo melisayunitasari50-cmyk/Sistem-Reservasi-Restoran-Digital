@@ -16,7 +16,6 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-<<<<<<< HEAD
 // 2. Jalur Modul Pelanggan (Punya Kawanmu)
 Route::get('/pelanggan', [PelangganRestoranController::class, 'index'])->name('pelanggan.index');
 Route::get('/pelanggan/tambah', [PelangganRestoranController::class, 'create'])->name('pelanggan.create');
@@ -34,11 +33,9 @@ Route::post('/menu/simpan', [MenuController::class, 'store'])->name('menu.store'
 Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::get('/order/tambah', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order/simpan', [OrderController::class, 'store'])->name('order.store');
-=======
 // Route untuk Modul-Modul (Meja dan Menu)
 Route::resource('meja', MejaController::class);
 Route::resource('menu', MenuController::class);
 
 // Jalur untuk pelanggan
 Route::resource('pelanggan', PelangganRestoranController::class);
->>>>>>> 8cc7fbf0915b5fc3028a93d0e1f2396c41d82ef4
