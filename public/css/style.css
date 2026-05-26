@@ -1,0 +1,93 @@
+:root {
+    --emerald-dark: #0a1f1a;
+    --emerald-card: #15302a;
+    --cream: #e0d8c3;
+    --gold: #c5a059;
+}
+
+/* Paksa body dan container */
+body {
+    background-color: var(--emerald-dark) !important;
+    color: var(--cream) !important;
+}
+
+/* Paksa card dan isinya */
+.card {
+    background-color: var(--emerald-card) !important;
+    border: 1px solid #2d4a44 !important;
+    color: var(--cream) !important;
+}
+
+/* Paksa header card */
+.card-header {
+    background-color: #0d2620 !important;
+    border-bottom: 1px solid #2d4a44 !important;
+    color: white !important;
+}
+
+/* Paksa tabel */
+.table {
+    color: var(--cream) !important;
+}
+
+.table-dark {
+    background-color: #0d2620 !important;
+}
+
+/* Paksa tombol primary */
+.btn-primary {
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #000 !important;
+}
+
+/* --- TAMBAHAN CSS GLOBAL AGAR KONSISTEN --- */
+
+/* Semua teks di dalam card atau body mengikuti warna cream */
+body,
+.card,
+.card-body,
+.alert {
+    color: var(--cream) !important;
+}
+
+/* Menetralkan background bawaan Bootstrap agar tidak putih */
+.bg-light,
+.alert-info {
+    background-color: var(--emerald-dark) !important;
+    border-color: var(--emerald-card) !important;
+}
+
+/* Judul dan teks heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--cream) !important;
+}
+
+/* Tombol outline agar serasi dengan warna emas */
+.btn-outline-primary,
+.btn-outline-success,
+.btn-outline-warning,
+.btn-outline-danger,
+.btn-outline-info {
+    color: var(--gold) !important;
+    border-color: var(--gold) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-success:hover,
+.btn-outline-warning:hover,
+.btn-outline-danger:hover,
+.btn-outline-info:hover {
+    background-color: var(--gold) !important;
+    color: #000 !important;
+}
+
+/* Pastikan teks yang berwarna muted tetap terbaca */
+.text-muted {
+    color: #b0a893 !important;
+}
