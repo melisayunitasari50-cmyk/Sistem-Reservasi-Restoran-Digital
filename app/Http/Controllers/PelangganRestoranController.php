@@ -7,10 +7,18 @@ use App\Models\Pelanggan_Restoran; // Mengimpor model
 
 class PelangganRestoranController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $pelanggan = Pelanggan_Restoran::all();
-        return view('pelanggan.index', compact('pelanggan'));
+        // Menangkap input pencarian
+        $search = $request->input('search');
+
+        // Mengambil data dengan kondisi pencarian
+        $pelanggan = Pelanggan_Restoran::when($search, function ($query) use ($search) {
+            return $query->where('nama_pelanggan', 'like', '%' . $search . '%')
+                         ->orWhere('nomor_hp', 'like', '%' . $search . '%');
+        })->get();
+
+        return view('pelanggan.index', compact('pelanggan', 'search'));
     }
 
     public function create()
@@ -31,26 +39,25 @@ class PelangganRestoranController extends Controller
     }
 
     // Tambahkan fungsi untuk menampilkan halaman edit
-public function edit($id)
-{
-    $pelanggan = \App\Models\Pelanggan_Restoran::findOrFail($id);
-    return view('pelanggan.edit', compact('pelanggan'));
-}
+    public function edit($id)
+    {
+        $pelanggan = \App\Models\Pelanggan_Restoran::findOrFail($id);
+        return view('pelanggan.edit', compact('pelanggan'));
+    }
 
-// Tambahkan fungsi untuk menyimpan perubahan
-public function update(Request $request, $id)
-{
-    $pelanggan = \App\Models\Pelanggan_Restoran::findOrFail($id);
-    $pelanggan->update($request->all());
-    return redirect('/pelanggan')->with('success', 'Data berhasil diupdate!');
-}
+    // Tambahkan fungsi untuk menyimpan perubahan
+    public function update(Request $request, $id)
+    {
+        $pelanggan = \App\Models\Pelanggan_Restoran::findOrFail($id);
+        $pelanggan->update($request->all());
+        return redirect('/pelanggan')->with('success', 'Data berhasil diupdate!');
+    }
 
-// Tambahkan fungsi untuk menghapus data
-public function destroy($id)
-{
-    $pelanggan = \App\Models\Pelanggan_Restoran::findOrFail($id);
-    $pelanggan->delete();
-    return redirect('/pelanggan')->with('success', 'Data berhasil dihapus!');
-}
-
+    // Tambahkan fungsi untuk menghapus data
+    public function destroy($id)
+    {
+        $pelanggan = \App\Models\Pelanggan_Restoran::findOrFail($id);
+        $pelanggan->delete();
+        return redirect('/pelanggan')->with('success', 'Data berhasil dihapus!');
+    }
 }

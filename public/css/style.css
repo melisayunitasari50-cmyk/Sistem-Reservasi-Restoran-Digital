@@ -91,3 +91,55 @@ h6 {
 .text-muted {
     color: #b0a893 !important;
 }
+
+/* --- TAMBAHAN BARU: INPUT FORM GLOBAL --- */
+
+.form-control,
+.form-select {
+    background-color: var(--emerald-card) !important;
+    color: var(--cream) !important;
+    border: 1px solid #2d4a44 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--emerald-card) !important;
+    color: var(--cream) !important;
+    border-color: var(--gold) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.25) !important;
+}
+
+.form-control::placeholder {
+    color: #8a7e66 !important;
+    opacity: 0.7;
+}
+
+/* --- TAMBAHAN BARU: TOMBOL NAVIGASI BERANDA --- */
+
+.btn-outline-light {
+    border-color: var(--cream) !important;
+    color: var(--cream) !important;
+    transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #000 !important;
+}
+
+/* Gaya Tombol Emas Konsisten */
+.btn-gold {
+    background-color: var(--gold) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #a38247 !important;
+    color: #fff !important; /* Berubah putih agar kontras saat di-hover */
+    transform: translateY(-2px); /* Sedikit efek naik saat disentuh */
+}

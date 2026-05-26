@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Meja - Sistem Reservasi Restoran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body class="bg-light">
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Form Tambah Meja Baru</h5>
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-grid-3x3"></i> Form Tambah Meja Baru</h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body p-4">
                     
-                    <form action="{{ url('/meja') }}" method="POST">
+                    <form action="{{ route('meja.store') }}" method="POST">
                         @csrf
 
                         <div class="mb-3">
@@ -39,9 +42,13 @@
                             </select>
                         </div>
 
-                        <div class="d-flex justify-content-between">
-                            <a href="{{ url('/meja') }}" class="btn btn-secondary">Kembali</a>
-                            <button type="submit" class="btn bg-primary text-white fw-bold">Simpan Data</button>
+                        <div class="d-flex justify-content-between gap-2">
+                            <a href="{{ route('meja.index') }}" class="btn btn-secondary w-100">
+                                <i class="bi bi-arrow-left"></i> Kembali
+                            </a>
+                            <button type="submit" class="btn btn-gold w-100 fw-bold">
+                                <i class="bi bi-check-circle"></i> Simpan Data
+                            </button>
                         </div>
 
                     </form>
@@ -52,5 +59,6 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
