@@ -8,41 +8,45 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Mengunci background emerald gelap terdalam agar terlihat tajam/HD */
         html, body {
             background-color: #011c16 !important;
             color: #ffffff !important;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* Styling Kartu Tabel Premium Modern (Efek HD Glass) */
+        /* Gaya Tombol Kembali ke Beranda Spesifik */
+        .btn-back-home-custom {
+            background-color: #cda34f !important;
+            color: #000 !important;
+            border: none !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+        .btn-back-home-custom:hover {
+            background-color: #b8903e !important;
+            transform: translateY(-2px);
+            color: #000 !important;
+        }
+
         .card-table-custom {
-            border: 1px solid rgba(52, 211, 153, 0.15) !important; /* Border tipis menyala halus */
+            border: 1px solid rgba(52, 211, 153, 0.15) !important;
             border-radius: 14px !important;
             background-color: #04392e !important; 
             overflow: hidden;
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
         }
 
-        .table-custom {
-            color: #ffffff !important;
-            margin-bottom: 0 !important;
-            background-color: transparent !important;
-        }
-
-        /* Memastikan baris tabel mengikuti warna dasar kartu */
-        .table-custom tr, .table-custom td, .table-custom th {
-            background-color: transparent !important;
-        }
-
-        /* Desain Kepala Tabel Mewah Muted */
-        .table-custom thead {
-            background-color: #02261f !important;
-        }
-
+        .table-custom { color: #ffffff !important; margin-bottom: 0 !important; background-color: transparent !important; }
+        .table-custom tr, .table-custom td, .table-custom th { background-color: transparent !important; }
+        .table-custom thead { background-color: #02261f !important; }
+        
         .table-custom th {
-            color: rgba(255, 255, 255, 0.7) !important; /* Putih soft mutiara tidak nabrak */
+            color: rgba(255, 255, 255, 0.7) !important;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -58,15 +62,8 @@
             font-size: 0.95rem;
         }
 
-        /* Efek Hover Baris dengan Efek Glow Lembut */
-        .table-custom tbody tr {
-            transition: background-color 0.2s ease;
-        }
-        .table-custom tbody tr:hover td {
-            background-color: rgba(52, 211, 153, 0.05) !important;
-        }
+        .table-custom tbody tr:hover td { background-color: rgba(52, 211, 153, 0.05) !important; }
 
-        /* Badge Nomor Meja */
         .badge-meja-custom {
             background-color: rgba(59, 130, 246, 0.15) !important;
             color: #93c5fd !important;
@@ -76,7 +73,6 @@
             border-radius: 6px;
         }
 
-        /* Badge Status Premium */
         .badge-status-pending {
             background-color: rgba(245, 158, 11, 0.15) !important;
             color: #fcd34d !important;
@@ -95,7 +91,6 @@
             border-radius: 6px;
         }
 
-        /* Custom Tombol Detail Premium */
         .btn-detail-custom {
             background: linear-gradient(135deg, #fef08a, #fde047) !important;
             color: #713f12 !important;
@@ -108,7 +103,6 @@
         }
         .btn-detail-custom:hover {
             background: linear-gradient(135deg, #fde047, #facc15) !important;
-            box-shadow: 0 4px 16px rgba(253, 224, 71, 0.35);
             transform: translateY(-1px);
         }
     </style>
@@ -116,6 +110,11 @@
 <body>
 
     <div class="container my-5">
+        <!-- Tombol Kembali ke Beranda -->
+        <a href="{{ url('/') }}" class="btn-back-home-custom mb-3">
+            <i class="fa-solid fa-house me-2"></i> Kembali ke Beranda
+        </a>
+
         <div class="d-flex justify-content-between align-items-center mb-4 p-2">
             <div class="d-flex align-items-center">
                 <div class="p-2.5 rounded-3 me-3" style="background-color: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.15);">
