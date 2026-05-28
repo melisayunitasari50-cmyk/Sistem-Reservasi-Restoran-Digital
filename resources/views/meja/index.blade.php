@@ -29,10 +29,13 @@
         
         <div class="card-body p-4">
             
-            {{-- Alert Berhasil --}}
+            {{-- Alert Berhasil (Diperbaiki agar teks berwarna hitam dan tebal) --}}
             @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show bg-opacity-75 border-0 text-dark" role="alert">
-                    <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
+                <div class="alert alert-success alert-dismissible fade show border-0" role="alert" 
+                     style="background-color: #d1e7dd;">
+                    <span class="text-dark fw-bold">
+                        <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
+                    </span>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
@@ -64,7 +67,6 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                {{-- Tombol Aksi Sejajar (Inline) --}}
                                 <div class="d-flex justify-content-center gap-2">
                                     <a href="{{ route('meja.edit', $meja->id) }}" class="btn btn-sm btn-warning fw-bold shadow-sm">
                                         Edit
